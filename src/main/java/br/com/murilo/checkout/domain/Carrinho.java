@@ -81,4 +81,7 @@ public class Carrinho {
         }
         return null;
     }
+    public void limpar() {
+    itens.clear();
+}
 }
