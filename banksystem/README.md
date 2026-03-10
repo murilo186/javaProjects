@@ -52,6 +52,8 @@ br.com.murilo.bank
 - Depositar valores
 - Sacar valores
 - Transferir entre contas
+- Atualizar titular de conta
+- Remover conta com saldo zerado
 - Consultar saldo
 - Ver historico de transacoes
 - Listar contas existentes
@@ -64,6 +66,7 @@ br.com.murilo.bank
 - Deposito aceita apenas valor positivo
 - Saque exige saldo suficiente
 - Transferencia debita a origem e credita o destino
+- Remocao de conta exige saldo zerado
 - Toda movimentacao gera transacao no historico
 
 ---
@@ -78,6 +81,8 @@ br.com.murilo.bank
 5 Ver saldo
 6 Ver historico
 7 Listar contas
+8 Atualizar titular
+9 Remover conta
 0 Sair
 
 ---

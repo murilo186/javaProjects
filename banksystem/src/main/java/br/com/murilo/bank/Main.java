@@ -27,6 +27,8 @@ public class Main {
                     case 5 -> verSaldo(sc, banco);
                     case 6 -> verHistorico(sc, banco);
                     case 7 -> listarContas(banco);
+                    case 8 -> atualizarTitular(sc, banco);
+                    case 9 -> removerConta(sc, banco);
                     case 0 -> {
                         System.out.println("Encerrando...");
                         sc.close();
@@ -51,6 +53,8 @@ public class Main {
         System.out.println("5 Ver saldo");
         System.out.println("6 Ver historico");
         System.out.println("7 Listar contas");
+        System.out.println("8 Atualizar titular");
+        System.out.println("9 Remover conta");
         System.out.println("0 Sair");
         System.out.println("============================");
     }
@@ -115,6 +119,20 @@ public class Main {
 
         System.out.println("=== Contas cadastradas ===");
         banco.listarContas().forEach(System.out::println);
+    }
+
+    private static void atualizarTitular(Scanner sc, Banco banco) {
+        int numeroConta = lerInt(sc, "Numero da conta: ");
+        String novoTitular = lerString(sc, "Novo nome do titular: ");
+
+        banco.atualizarTitular(numeroConta, novoTitular);
+        System.out.println("Titular atualizado com sucesso.");
+    }
+
+    private static void removerConta(Scanner sc, Banco banco) {
+        int numeroConta = lerInt(sc, "Numero da conta para remover: ");
+        banco.removerConta(numeroConta);
+        System.out.println("Conta removida com sucesso.");
     }
 
     private static Conta buscarContaPorEntrada(Scanner sc, Banco banco, String prompt) {

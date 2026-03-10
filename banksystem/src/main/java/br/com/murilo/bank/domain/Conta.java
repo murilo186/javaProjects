@@ -10,7 +10,7 @@ import java.util.List;
 public class Conta {
 
     private final int numero;
-    private final String titular;
+    private String titular;
     private BigDecimal saldo;
     private final List<Transacao> historicoTransacoes;
 
@@ -31,6 +31,14 @@ public class Conta {
 
     public String getTitular() {
         return titular;
+    }
+
+    public void atualizarTitular(String novoTitular) {
+        if (novoTitular == null || novoTitular.isBlank()) {
+            throw new IllegalArgumentException("Titular nao pode ser vazio.");
+        }
+
+        this.titular = novoTitular.trim();
     }
 
     public BigDecimal getSaldo() {
