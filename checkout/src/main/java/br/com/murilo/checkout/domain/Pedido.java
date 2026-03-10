@@ -1,5 +1,5 @@
-package main.java.br.com.murilo.checkout.domain;
-import java.math.BigDecimal;
+package br.com.murilo.checkout.domain;
+
 
 public class Pedido {
 

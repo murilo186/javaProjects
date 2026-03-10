@@ -1,4 +1,4 @@
-package main.java.br.com.murilo.checkout.model;
+package br.com.murilo.checkout.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;

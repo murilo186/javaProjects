@@ -1,4 +1,4 @@
-package main.java.br.com.murilo.checkout.domain;
+package br.com.murilo.checkout.domain;
 
 public enum FormaPagamento {
 

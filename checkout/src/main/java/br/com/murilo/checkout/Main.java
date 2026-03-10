@@ -1,9 +1,9 @@
-package main.java.br.com.murilo.checkout;
+package br.com.murilo.checkout;
 
-import main.java.br.com.murilo.checkout.domain.Carrinho;
-import main.java.br.com.murilo.checkout.domain.FormaPagamento;
-import main.java.br.com.murilo.checkout.domain.Pedido;
-import main.java.br.com.murilo.checkout.model.Produto;
+import br.com.murilo.checkout.domain.Carrinho;
+import br.com.murilo.checkout.domain.FormaPagamento;
+import br.com.murilo.checkout.domain.Pedido;
+import br.com.murilo.checkout.model.Produto;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
@@ -135,13 +135,7 @@ public class Main {
      * - removendo item por item (com base no nome).
      * Se preferir, crie carrinho.limpar() e substitua por carrinho.limpar().
      */
-    private static void limparCarrinho(Carrinho carrinho) {
-        // remove até ficar vazio
-        while (!carrinho.estaVazio()) {
-            String nome = carrinho.getItens().get(0).getProduto().getNome();
-            carrinho.removerPorNome(nome);
-        }
-    }
+    
 
     // ===== Helpers de leitura =====
 

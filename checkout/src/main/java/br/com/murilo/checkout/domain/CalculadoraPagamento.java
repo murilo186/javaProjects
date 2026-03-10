@@ -1,4 +1,4 @@
-package main.java.br.com.murilo.checkout.domain;
+package br.com.murilo.checkout.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,7 +1,7 @@
-package main.java.br.com.murilo.checkout.domain;
+package br.com.murilo.checkout.domain;
 
-import main.java.br.com.murilo.checkout.model.ItemCarrinho;
-import main.java.br.com.murilo.checkout.model.Produto;
+import br.com.murilo.checkout.model.ItemCarrinho;
+import br.com.murilo.checkout.model.Produto;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ public class Carrinho {
 
     private final List<ItemCarrinho> itens = new ArrayList<>();
 
+    // Operacoes publicas do carrinho
     public void adicionar(Produto produto, int quantidade) {
         if (quantidade <= 0) {
             throw new IllegalArgumentException("Quantidade deve ser maior que zero.");
@@ -29,16 +30,20 @@ public class Carrinho {
 
     public void removerPorNome(String nomeProduto) {
         if (nomeProduto == null || nomeProduto.isBlank()) {
-            throw new IllegalArgumentException("Nome do produto não pode ser vazio.");
+            throw new IllegalArgumentException("Nome do produto nao pode ser vazio.");
         }
 
         ItemCarrinho item = encontrarItemPorNome(nomeProduto);
 
         if (item == null) {
-            throw new IllegalArgumentException("Produto não encontrado no carrinho: " + nomeProduto);
+            throw new IllegalArgumentException("Produto nao encontrado no carrinho: " + nomeProduto);
         }
 
         itens.remove(item);
+    }
+
+    public void limpar() {
+        itens.clear();
     }
 
     public BigDecimal subtotal() {
@@ -60,10 +65,11 @@ public class Carrinho {
     }
 
     public List<ItemCarrinho> getItens() {
-        // não devolve a lista mutável "na mão" pra não bagunçar o carrinho
+        // Nao devolve a lista mutavel "na mao" para proteger o estado do carrinho.
         return Collections.unmodifiableList(itens);
     }
 
+    // Metodos auxiliares privados
     private ItemCarrinho encontrarItemPorProduto(Produto produto) {
         for (ItemCarrinho item : itens) {
             if (item.getProduto().equals(produto)) {
@@ -81,7 +87,5 @@ public class Carrinho {
         }
         return null;
     }
-    public void limpar() {
-    itens.clear();
-}
+
 }
