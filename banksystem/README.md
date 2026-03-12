@@ -90,8 +90,8 @@ br.com.murilo.bank
 ## Como Executar
 
 1. Abrir a pasta `banksystem`
-2. Compilar os arquivos Java
-3. Executar a classe `Main`
+2. Compilar os arquivos Java com `javac -d out (Get-ChildItem -Recurse src/main/java -Filter *.java | ForEach-Object { $_.FullName })`
+3. Executar a classe principal com `java -cp out br.com.murilo.bank.Main`
 4. Utilizar o menu no console
 
 ---

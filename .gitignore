@@ -1,3 +1,7 @@
 checkout/out/
 geometria/out/
 banksystem/out/
+# JVM crash logs / dumps
+hs*.log
+hs*.mdmp
+replay*.log
